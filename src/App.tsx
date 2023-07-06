@@ -5,13 +5,14 @@ import {MainPageAsync} from './pages/MainPage/MainPage.async';
 import {AboutPageAsync} from "./pages/AboutPage/AboutPage.async";
 import styles from './components/Counter.module.scss'
 import {UseTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
 
 
 const App = () => {
     const {theme, toggleTheme} = UseTheme()
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <Link to={'/'}>Main</Link>
             <Link to={'/about'}>About</Link>
             <button className={styles.btn} onClick={toggleTheme}>font
