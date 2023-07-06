@@ -6,4 +6,8 @@
 
 .app {
   font-size: 30px;
+
+  a + a {
+    margin-left: 20px;
+  }
 }
