@@ -1,0 +1,28 @@
+@import 'reset';
+@import 'variables/global';
+@import 'themes/normal';
+@import 'themes/dark';
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  font: var(--font-l);
+
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+
+  a {
+    color: var(--primary-color)
+  }
+
+  a + a {
+    margin-left: 20px;
+  }
+}
