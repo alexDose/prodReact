@@ -1,14 +1,12 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import './styles/index.scss'
 import {classNames} from "shared/lib/classNames/classNames";
 import {UseTheme} from "app/providers/ThemeProvider";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
 import {Sidebar} from "widgets/Sidebar/ui";
-import {Suspense} from 'react';
 
 import "shared/config/i18n/i18n";
-import {LangSwitcher} from "widgets/LangSwitcher";
 
 const App = () => {
     const {theme} = UseTheme()
