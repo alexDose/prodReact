@@ -17,12 +17,13 @@
   color: var(--primary-color);
 
   min-height: 100vh;
+}
 
-  //a {
-  //  color: var(--primary-color)
-  //}
+.container {
+  display: flex;
+}
 
-  //a + a {
-  //  margin-left: 20px;
-  //}
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
 }
