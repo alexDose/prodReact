@@ -19,7 +19,6 @@ export const Sidebar = ({className}: SidebarProps) => {
 	return (
 		<div className={classNames(styles.Sidebar, {[styles.collapsed]: collapsed}, [className])}>
 			<button onClick={onToggle}>toggle</button>
-			river
 			<div className={styles.switchers}>
 				<ThemeSwitcher/>
 				<LangSwitcher/>

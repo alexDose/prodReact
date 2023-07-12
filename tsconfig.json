@@ -18,5 +18,8 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
 }
