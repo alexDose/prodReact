@@ -4,6 +4,10 @@
   background-color: var(--inverted-bg-color);
   position: relative;
   transition: width 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .collapsed {
