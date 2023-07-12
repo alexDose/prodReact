@@ -1,17 +1,15 @@
-import React from 'react';
-import './styles/index.scss'
-import {classNames} from "shared/lib/classNames/classNames";
-import {UseTheme} from "app/providers/ThemeProvider";
-import {AppRouter} from "app/providers/router";
-import {Navbar} from "widgets/Navbar";
-import {Sidebar} from "widgets/Sidebar/ui";
+import './styles/index.scss';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {UseTheme} from 'app/providers/ThemeProvider';
+import {AppRouter} from 'app/providers/router';
+import {Navbar} from 'widgets/Navbar';
+import {Sidebar} from 'widgets/Sidebar/ui';
 import {Suspense} from 'react';
 
-import "shared/config/i18n/i18n";
-import {LangSwitcher} from "widgets/LangSwitcher";
+import 'shared/config/i18n/i18n';
 
 const App = () => {
-    const {theme} = UseTheme()
+    const {theme} = UseTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
