@@ -1,0 +1,29 @@
+.AboutPage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .task {
+    border: 2px solid var(--primary-color);
+    padding: 4px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    display: flex;
+    align-items:center;
+    gap: 10px;
+  }
+
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    padding: 2px 10px;
+  }
+}
+
