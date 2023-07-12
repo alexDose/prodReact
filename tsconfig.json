@@ -12,15 +12,11 @@
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
-    },
-    "strictNullChecks": true
+    }
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  },
-  "jsoncompilerOptions": {
-    "strictNullChecks": true
   }
 }
