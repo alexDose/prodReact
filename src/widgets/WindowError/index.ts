@@ -1,2 +1,2 @@
-export {WindowError} from "./ui/WindowError";
+export {WindowError} from './ui/WindowError';
 
