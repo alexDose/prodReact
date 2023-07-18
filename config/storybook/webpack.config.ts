@@ -28,7 +28,7 @@ export default ({config}: {config: webpack.Configuration}) => {
     test: /\.(ts|tsx)$/,
     loader: 'ts-loader',
     exclude: /node_modules/,
-  })
+  });
 
   config.module.rules.push(buildCssLoader(true));
 
