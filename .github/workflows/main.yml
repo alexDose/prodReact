@@ -43,7 +43,6 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
 
-            name: install modules
            - run: npm install
            - name: build production project
            - run: npm run build:prod
