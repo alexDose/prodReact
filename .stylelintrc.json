@@ -8,6 +8,7 @@
     "no-empty-source": null,
     "color-function-notation": null,
     "alpha-value-notation": "number",
-    "scss/double-slash-comment-whitespace-inside": null
+    "scss/double-slash-comment-whitespace-inside": null,
+    "declaration-block-no-redundant-longhand-properties": null
   }
 }
