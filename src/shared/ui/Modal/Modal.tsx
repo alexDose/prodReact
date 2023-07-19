@@ -2,6 +2,7 @@ import {classNames} from "shared/lib/classNames/classNames";
 import styles from './Modal.module.scss'
 import {FC, useCallback, useEffect, useRef, useState} from "react";
 import {Portal} from "shared/ui/Portal/Portal";
+import {UseTheme} from "app/providers/ThemeProvider";
 
 interface ModalProps {
     className?: string
@@ -12,6 +13,8 @@ interface ModalProps {
 const ANIMATION_DELAY = 300
 
 export const Modal:FC<ModalProps> = ({className, children, isOpen, onClose}) => {
+    const {theme} = UseTheme()
+
     const [isClosing, setIsClosing] = useState(false)
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
@@ -50,7 +53,7 @@ export const Modal:FC<ModalProps> = ({className, children, isOpen, onClose}) => 
 
     return (
         <Portal>
-            <div className={classNames(styles.Modal, mods, [className])} onClick={closeHandler}>
+            <div className={classNames(styles.Modal, mods, [className, theme])} onClick={closeHandler}>
                 <div className={styles.overlay}>
                     <div className={styles.content} onClick={onContentClick}>
                         {children}
