@@ -74,6 +74,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "apisauce": "^3.0.1",
     "autoprefixer": "10.4.5",
     "i18next": "^23.2.8",
     "i18next-browser-languagedetector": "^7.1.0",
