@@ -8,5 +8,8 @@
   "decrement": "decrement",
   "Error": "Error",
   "reload": "reload",
-  "throw Error": "throw Error"
+  "throw Error": "throw Error",
+  "username": "Username",
+  "password": "Password",
+  "Failed login or password": "Failed login or password"
 }

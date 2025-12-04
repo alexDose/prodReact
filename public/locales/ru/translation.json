@@ -8,5 +8,8 @@
   "decrement": "уменьшить",
   "Error": "Ошибка",
   "reload": "перезагрузить",
-  "throw Error": "выкинь ошибку"
+  "throw Error": "выкинь ошибку",
+  "username": "Имя пользователя",
+  "password": "Пароль",
+  "Failed login or password": "Неверный логин или пароль"
 }

@@ -1,6 +1,7 @@
 {
   "About": "About",
   "Error": "Error",
+  "Failed login or password": "Failed login or password",
   "Language": "Language",
   "Login": "Login",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -11,6 +12,8 @@
   "decrement": "decrement",
   "increment": "increment",
   "modal_content": "modal_content",
+  "password": "password",
   "reload": "reload",
-  "throw Error": "throw Error"
+  "throw Error": "throw Error",
+  "username": "username"
 }
