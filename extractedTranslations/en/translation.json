@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Edit": "Edit",
   "Error": "Error",
   "Failed login or password": "Failed login or password",
   "Language": "Language",
@@ -10,6 +11,7 @@
   "Main": "Main",
   "Page not found": "Page not found",
   "decrement": "decrement",
+  "edit": "edit",
   "increment": "increment",
   "modal_content": "modal_content",
   "password": "password",

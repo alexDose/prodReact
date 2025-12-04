@@ -5,7 +5,14 @@ module.exports = {
     'es2021': true,
     'jest': true
   },
-  'extends': ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:i18next/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended'],
+  'extends': [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended'
+  ],
   'overrides': [{
     'env': {
       'node': true
@@ -21,11 +28,16 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': ['@typescript-eslint', 'react', 'i18next', 'react-hooks'],
+  'settings': {
+    'react': {
+      'version': 'detect'
+    }
+  },
   'rules': {
     'linebreak-style': ['error', 'unix'],
     'semi': ['error', 'always'],
     '@typescript-eslint/ban-ts-comment': 'warn',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     'indent': ['warn', 2],
     'no-tabs': 'error',
@@ -34,7 +46,8 @@ module.exports = {
     }],
     'quotes': ['error', 'single'],
     'i18next/no-literal-string': ['error', {
-      'markupOnly': true
+      'markupOnly': true,
+      'ignoreAttribute': ['data-testid', 'to', 'target', 'type', 'as']
     }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error'

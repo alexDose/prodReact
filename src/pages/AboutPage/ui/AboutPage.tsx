@@ -43,7 +43,7 @@ const AboutPage = () => {
             </div>
             <div className={styles.company}>
               {task.company.name}
-              <button onClick={() => editNameCompany(task.id)}>edit</button>
+              <button onClick={() => editNameCompany(task.id)}>{t('Edit')}</button>
 
               {task.company.name !== 'empty' &&
                                 <button onClick={() => removeNameCompany(task.id)}>X</button>
