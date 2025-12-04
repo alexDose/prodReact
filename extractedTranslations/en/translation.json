@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Error": "Error",
   "Language": "Language",
   "Login": "Login",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -9,5 +10,7 @@
   "Page not found": "Page not found",
   "decrement": "decrement",
   "increment": "increment",
-  "modal_content": "modal_content"
+  "modal_content": "modal_content",
+  "reload": "reload",
+  "throw Error": "throw Error"
 }

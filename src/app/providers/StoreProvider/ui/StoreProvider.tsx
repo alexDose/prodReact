@@ -1,5 +1,5 @@
 import {Provider} from 'react-redux';
-import {createStore} from 'app/providers/StoreProvider/config/Store';
+import {createReduxStore} from 'app/providers/StoreProvider/config/Store';
 import {ReactNode} from 'react';
 
 interface StoreProviderProps {
@@ -7,7 +7,7 @@ interface StoreProviderProps {
 }
 
 export const StoreProvider = ({children}: StoreProviderProps) => {
-  const store = createStore();
+  const store = createReduxStore();
 
   return (
     <Provider store={store}>

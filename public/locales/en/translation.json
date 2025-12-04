@@ -5,5 +5,8 @@
   "ShortLanguage": "en",
   "Login": "Login",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Error": "Error",
+  "reload": "reload",
+  "throw Error": "throw Error"
 }

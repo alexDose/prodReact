@@ -1,4 +1,5 @@
 module.exports = {
+  'ignorePatterns': ['json-server/**'],
   'env': {
     'browser': true,
     'es2021': true,

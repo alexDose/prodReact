@@ -5,5 +5,8 @@
   "ShortLanguage": "ru",
   "Login": "Войти",
   "increment": "увеличить",
-  "decrement": "уменьшить"
+  "decrement": "уменьшить",
+  "Error": "Ошибка",
+  "reload": "перезагрузить",
+  "throw Error": "выкинь ошибку"
 }
