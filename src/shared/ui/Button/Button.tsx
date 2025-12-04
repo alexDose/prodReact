@@ -4,44 +4,45 @@ import {ButtonHTMLAttributes, FC} from 'react';
 
 export enum ButtonTheme {
     CLEAR = 'clear',
-	OUTLINE = 'outline',
-	BACKGROUND = 'background',
-	BACKGROUND_INVERTED = 'backgroundInverted',
+    CLEAR_INVERTED = 'clearInverted',
+    OUTLINE = 'outline',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
-	M = 'size_m',
-	L = 'size_l',
-	XL = 'size_xl'
+    M = 'size_m',
+    L = 'size_l',
+    XL = 'size_xl'
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     theme?: ButtonTheme
-	square?: boolean
-	size?: string
+    square?: boolean
+    size?: string
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-	const {
-		className,
-		children,
-		theme,
-		square,
-		size = ButtonSize.M,
-		...otherProps
-	} = props;
+  const {
+    className,
+    children,
+    theme,
+    square,
+    size = ButtonSize.M,
+    ...otherProps
+  } = props;
 
-	const mods: Record<string, boolean> = {
-		[styles[theme]]: true,
-		[styles.square]: square,
-		[styles[size]]: true
-	}
+  const mods: Record<string, boolean> = {
+    [styles[theme]]: true,
+    [styles.square]: square,
+    [styles[size]]: true
+  };
 
-	return (
-		<button className={classNames(styles.Button, mods, [className])}
-			{...otherProps}>
-			{children}
-		</button>
-	);
+  return (
+    <button className={classNames(styles.Button, mods, [className])}
+      {...otherProps}>
+      {children}
+    </button>
+  );
 };

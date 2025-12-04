@@ -3,5 +3,7 @@
   "Main": "Главная страница",
   "Language": "russian",
   "ShortLanguage": "ru",
-  "Login": "Войти"
+  "Login": "Войти",
+  "increment": "увеличить",
+  "decrement": "уменьшить"
 }

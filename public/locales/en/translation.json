@@ -3,5 +3,7 @@
   "Main": "Main",
   "Language": "english",
   "ShortLanguage": "en",
-  "Login": "Login"
+  "Login": "Login",
+  "increment": "increment",
+  "decrement": "decrement"
 }

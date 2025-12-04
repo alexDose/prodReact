@@ -2,6 +2,12 @@
   "About": "About",
   "Language": "Language",
   "Login": "Login",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    "": ""
+  },
   "Main": "Main",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "decrement": "decrement",
+  "increment": "increment",
+  "modal_content": "modal_content"
 }
