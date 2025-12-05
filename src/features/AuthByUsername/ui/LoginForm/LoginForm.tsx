@@ -1,39 +1,34 @@
-import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
-import { useCallback, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import {useTranslation} from 'react-i18next';
+import {Button, ButtonTheme} from 'shared/ui/Button/Button';
+import {useCallback} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import cls from './LoginForm.module.scss';
 import {Input} from 'shared/ui/Input/Input';
+import {getLoginState} from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState';
+import {loginActions} from '../../model/slice/loginSlice';
+import {getIsLoading} from 'features/AuthByUsername/model/selectors/getIsLoading/getIsLoading';
+import {getError} from 'features/AuthByUsername/model/selectors/getError/getError';
+import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
+import {AppDispatch} from 'app/providers/StoreProvider/config/Store';
 
 export const LoginForm = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const {username, password} = useSelector(getLoginState);
+  const isLoading = useSelector(getIsLoading);
+  const error = useSelector(getError);
+  const dispatch = useDispatch<AppDispatch>();
 
   const onChangeUsername = useCallback((value: string) => {
-    setUsername(value);
-  }, []);
+    dispatch(loginActions.setUsername(value));
+  }, [dispatch]);
 
   const onChangePassword = useCallback((value: string) => {
-    setPassword(value);
-  }, []);
+    dispatch(loginActions.setPassword(value));
+  }, [dispatch]);
 
-  const onLoginClick = useCallback(async () => {
-    setIsLoading(true);
-    setError('');
-
-    try {
-      // await dispatch(loginByUsername({ username, password }));
-    } catch (e) {
-      setError(t('Failed login or password'));
-    } finally {
-      setIsLoading(false);
-    }
-  }, [t]);
+  const onLoginClick = useCallback(() => {
+    dispatch(loginByUsername({username, password}));
+  }, [dispatch, username, password]);
 
   return (
     <div className={cls.LoginForm}>
@@ -52,6 +47,7 @@ export const LoginForm = () => {
         onChange={onChangePassword}
       />
       <Button
+        theme={ButtonTheme.OUTLINE}
         className={cls.loginBtn}
         onClick={onLoginClick}
         disabled={isLoading}
