@@ -1,21 +1,23 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './WindowError.module.scss';
 import {useTranslation} from 'react-i18next';
+import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 
 interface WindowErrorProps {
     className?: string
 }
 
 export const WindowError = ({className}: WindowErrorProps) => {
+  const {t} = useTranslation();
+
   const reload = () => {
     location.reload();
   };
-  const {t} = useTranslation();
 
   return (
     <div className={classNames(styles.WindowError, {}, [className])}>
       <h3>{t('Error')}</h3>
-      <button onClick={reload}>{t('reload')}</button>
+      <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={reload}>{t('reload')}</Button>
     </div>
   );
 };

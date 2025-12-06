@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
+import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 
 export const BugButton = () => {
   const [isError, setError] = useState(false);
@@ -10,8 +11,8 @@ export const BugButton = () => {
   }, [isError]);
 
   return (
-    <button onClick={() => setError(true)}>
+    <Button theme={ButtonTheme.OUTLINE} onClick={() => setError(true)}>
       {(t('throw Error'))}
-    </button>
+    </Button>
   );
 };
