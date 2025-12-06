@@ -10,6 +10,7 @@ import {getIsLoading} from 'features/AuthByUsername/model/selectors/getIsLoading
 import {getError} from 'features/AuthByUsername/model/selectors/getError/getError';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
 import {AppDispatch} from 'app/providers/StoreProvider/config/Store';
+import {Text, TextTheme} from 'shared/ui/Text/Text';
 
 export const LoginForm = () => {
   const { t } = useTranslation();
@@ -19,10 +20,12 @@ export const LoginForm = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const onChangeUsername = useCallback((value: string) => {
+    dispatch(loginActions.clearError());
     dispatch(loginActions.setUsername(value));
   }, [dispatch]);
 
   const onChangePassword = useCallback((value: string) => {
+    dispatch(loginActions.clearError());
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
@@ -32,7 +35,8 @@ export const LoginForm = () => {
 
   return (
     <div className={cls.LoginForm}>
-      {error && <p className={cls.error}>{error}</p>}
+      <Text title={t('Form for authorization')}/>
+      {error && <Text text={t('You enter invalid login or password')} theme={TextTheme.ERROR}/>}
       <Input
         autofocus
         type="text"

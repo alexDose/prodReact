@@ -4,11 +4,13 @@ import {AppRouter} from 'app/providers/router';
 import {Navbar} from 'widgets/Navbar';
 import {Sidebar} from 'widgets/Sidebar/ui';
 import {Suspense, useEffect} from 'react';
-
 import 'shared/config/i18n/i18n';
 import {create} from 'apisauce';
+import {useDispatch} from 'react-redux';
+import {userActions} from 'entities/User';
 
 const App = () => {
+  const dispatch = useDispatch();
   const {theme} = UseTheme();
 
   const api = create({
@@ -35,10 +37,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchNews();
-    signIn();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    dispatch(userActions.initAuthData());
+    // fetchNews();
+    // signIn();
+  }, [dispatch]);
 
   return (
     <div className={classNames('app', {}, [theme])}>

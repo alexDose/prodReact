@@ -1,5 +1,6 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {UserSchema} from '../../index';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {User, UserSchema} from '../../index';
+import {USER_LOCALSTORAGE_KEY} from 'shared/const/localstorage';
 
 const initialState: UserSchema = {};
 
@@ -7,7 +8,18 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-        
+    setAuthData: (state, action: PayloadAction<User>) => {
+      state.authData = action.payload;
+    },
+    initAuthData: (state) => {
+      if (localStorage.getItem(USER_LOCALSTORAGE_KEY)) {
+        state.authData = JSON.parse(localStorage.getItem(USER_LOCALSTORAGE_KEY));
+      }
+    },
+    logout: (state) => {
+      state.authData = undefined;
+      localStorage.removeItem(USER_LOCALSTORAGE_KEY);
+    }
   }
 });
 

@@ -11,5 +11,8 @@
   "throw Error": "выкинь ошибку",
   "username": "Имя пользователя",
   "password": "Пароль",
-  "Failed login or password": "Неверный логин или пароль"
+  "Failed login or password": "Неверный логин или пароль",
+  "Form for authorization": "Форма для авторизации",
+  "You enter invalid login or password": "Вы ввели неверный логин или пароль",
+  "Logout": "Выйти"
 }

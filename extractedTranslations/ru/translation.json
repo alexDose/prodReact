@@ -3,13 +3,16 @@
   "Edit": "Edit",
   "Error": "Error",
   "Failed login or password": "Failed login or password",
+  "Form for authorization": "Form for authorization",
   "Language": "Language",
   "Login": "Login",
+  "Logout": "Logout",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     "": ""
   },
   "Main": "Main",
   "Page not found": "Page not found",
+  "You enter invalid login or password": "You enter invalid login or password",
   "decrement": "decrement",
   "edit": "edit",
   "increment": "increment",

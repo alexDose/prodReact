@@ -11,5 +11,8 @@
   "throw Error": "throw Error",
   "username": "Username",
   "password": "Password",
-  "Failed login or password": "Failed login or password"
+  "Failed login or password": "Failed login or password",
+  "Form for authorization": "Form for authorization",
+  "You enter invalid login or password": "You enter invalid login or password",
+  "Logout": "Logout"
 }
