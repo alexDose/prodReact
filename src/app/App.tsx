@@ -29,7 +29,7 @@ const App = () => {
     console.log(data);
     return data;
   };
-  const fetchNews = async () => {
+  const  fetchNews = async () => {
     setAuthHeaders('0YBnMvrUVlDqKOmS2w66og', 'OdhR_QI2Qpmmo8bU4ychWQ', 'bullet2271293@gmail.com');
     const data = await api.get('/news');
     console.log(data);
