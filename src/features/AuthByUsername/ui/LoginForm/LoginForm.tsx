@@ -1,7 +1,6 @@
 import {useTranslation} from 'react-i18next';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 import {useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
 import cls from './LoginForm.module.scss';
 import {Input} from 'shared/ui/Input/Input';
 import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginState';
@@ -10,21 +9,24 @@ import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
-import {AppDispatch} from 'app/providers/StoreProvider/config/Store';
 import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/dynamicModuleLoader/dynamicModuleLoader';
+import {useNavigate} from 'react-router-dom';
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
+import {useSelector} from 'react-redux';  // ✅ Добавь
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer
 };
 
 const LoginForm = () => {
-  const { t } = useTranslation();
+  const {t} = useTranslation();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();  // ✅ Добавь
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
@@ -34,17 +36,26 @@ const LoginForm = () => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const onLoginClick = useCallback(() => {
+  const onLoginClick = useCallback(async () => {  // ✅ Сделай async
     dispatch(loginActions.clearError());
-    dispatch(loginByUsername({username, password}));
-  }, [dispatch, username, password]);
+    const result = await dispatch(loginByUsername({username, password}));
 
+    // ✅ Навигация после успешного логина
+    if (loginByUsername.fulfilled.match(result)) {
+      navigate('/about');
+    }
+  }, [dispatch, navigate, username, password]);
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
       <div className={cls.LoginForm}>
         <Text title={t('Form for authorization')}/>
-        {error && <Text text={t('You enter invalid login or password')} theme={TextTheme.ERROR}/>}
+        {error && (
+          <Text
+            text={t('You enter invalid login or password')}
+            theme={TextTheme.ERROR}
+          />
+        )}
         <Input
           autofocus
           type="text"

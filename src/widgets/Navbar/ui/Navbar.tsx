@@ -2,7 +2,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
 import {BugButton} from 'widgets/WindowError/ui/BugButton';
-import {useCallback, useState} from 'react';
+import {memo, useCallback, useState} from 'react';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
@@ -12,7 +12,7 @@ interface NavbarProps {
     className?: string
 }
 
-export const Navbar = ({className}: NavbarProps) => {
+const NavbarComponent = ({className}: NavbarProps) => {
   const {t} = useTranslation();
   const isAuth = useSelector(getAuthUserData);
   const dispatch = useDispatch();
@@ -49,3 +49,5 @@ export const Navbar = ({className}: NavbarProps) => {
     </div>
   );
 };
+
+export const Navbar = memo(NavbarComponent);

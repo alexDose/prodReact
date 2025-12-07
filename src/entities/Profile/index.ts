@@ -1,0 +1,1 @@
+export {ProfileType, ProfileSchema} from './model/types/profile';
