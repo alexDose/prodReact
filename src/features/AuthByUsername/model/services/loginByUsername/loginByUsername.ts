@@ -8,19 +8,34 @@ interface LoginByUsernameInput {
     password: string;
 }
 
-export const loginByUsername = createAsyncThunk<User, LoginByUsernameInput, ThunkConfig<string>>('login/loginByUsername',
+export const loginByUsername = createAsyncThunk<User, LoginByUsernameInput, ThunkConfig<string>>(
+  'login/loginByUsername',
   async (authData, {extra, dispatch, rejectWithValue}) => {
     try {
-      const response = await extra.api.post('/login', authData);
-      if (!response.data) {
-        console.log(response.data.message || 'Login error');
+      // Проверка что api существует
+      if (!extra?.api) {
+        return rejectWithValue('API not configured');
       }
+
+      const response = await extra.api.post<User>('/login', authData);
+
+      if (!response.data) {
+        console.log('Login error: no data received');
+        return rejectWithValue('No data received');
+      }
+
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
-      extra.navigate('/about');
+
+      // Проверка что navigate существует
+      if (extra.navigate) {
+        extra.navigate('/about');
+      }
+
       return response.data;
     } catch(e) {
       console.log(e);
-      return rejectWithValue('error');
+      return rejectWithValue('Login failed');
     }
-  });
+  }
+);

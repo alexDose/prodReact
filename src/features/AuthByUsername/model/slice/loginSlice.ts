@@ -6,7 +6,7 @@ const initialState: LoginSchema  = {
   username: '',
   password: '',
   isLoading: false,
-  error: null
+  error: undefined
 };
 
 export const loginSlice = createSlice({
@@ -20,7 +20,7 @@ export const loginSlice = createSlice({
       state.password = action.payload;
     },
     clearError: (state) => {
-      state.error = null;
+      state.error = undefined;
     }
   },
   extraReducers: (builder) => {

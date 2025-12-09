@@ -20,9 +20,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     theme?: ButtonTheme
     square?: boolean
-    size?: string
+    size?: ButtonSize  // Changed from string to ButtonSize
     disabled?: boolean
-    children? : ReactNode
+    children?: ReactNode
 }
 
 const ButtonComponent = (props: ButtonProps) => {
@@ -36,21 +36,27 @@ const ButtonComponent = (props: ButtonProps) => {
     ...otherProps
   } = props;
 
-  const mods: Record<string, boolean> = {
-    [styles[theme]]: true,
+  const mods: Record<string, boolean | undefined> = {
+    [styles[theme ?? '']]: Boolean(theme),  // Handle undefined theme
     [styles.square]: square,
     [styles[size]]: true,
     [styles.disabled]: disabled,
   };
+  
+  // Filter out undefined values before passing to classNames
+  const filteredMods = Object.fromEntries(
+    Object.entries(mods).filter(([_, value]) => value !== undefined)
+  ) as Record<string, boolean>;
 
   return (
-    <button className={classNames(styles.Button, mods, [className])}
+    <button
+      className={classNames(styles.Button, filteredMods, [className])}
       disabled={disabled}
-      {...otherProps}>
+      {...otherProps}
+    >
       {children}
     </button>
   );
 };
-
 
 export const Button = memo(ButtonComponent);

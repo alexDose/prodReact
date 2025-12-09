@@ -1,4 +1,4 @@
-import {configureStore, ReducersMapObject} from '@reduxjs/toolkit';
+import {configureStore, ReducersMapObject, Reducer} from '@reduxjs/toolkit';
 import {counterReducer} from 'entities/Counter/modal/slices/CounterSlice';
 import {StateSchema} from 'app/providers/StoreProvider';
 import {userReducer} from 'entities/User';
@@ -20,13 +20,14 @@ export const createReduxStore = (
   const reducerManager = createReducerManager(rootReducers);
 
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<StateSchema>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: {
         extraArgument: {
           api: $api,
+          navigate,
         }
       }
     })
@@ -38,5 +39,4 @@ export const createReduxStore = (
   return store;
 };
 
-const defaultStore = createReduxStore();
-export type AppDispatch = typeof defaultStore.dispatch;
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
