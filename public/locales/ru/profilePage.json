@@ -3,5 +3,11 @@
   "Profile": "Profile",
   "Edit": "Редактировать",
   "Your firstname": "Твое имя",
-  "Your lastname": "Твоя фамилия"
+  "Your lastname": "Твоя фамилия",
+  "Error": "Ошибка",
+  "Try reloading the page": "Попробуйте перезагрузить страницу",
+  "Cancel": "Отмена",
+  "Save": "Сохранить",
+  "Your age": "Твой возраст",
+  "Your city": "Твой город"
 }

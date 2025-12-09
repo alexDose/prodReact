@@ -1,3 +1,11 @@
 export {ProfileType, ProfileSchema} from './model/types/profile';
 export {fetchProfileData} from './model/services/fetchProfileData';
 export {ProfileCard} from './ui/ProfileCard/ProfileCard';
+export {getFirstName} from './model/selectors/getFirstName';
+export {getLastName} from './model/selectors/getLastName';
+export {getProfileIsLoading} from './model/selectors/getProfileIsLoading';
+export {getProfileData} from './model/selectors/getProfileData';
+export {getProfileError} from './model/selectors/getProfileError';
+export {getProfileReadOnly} from './model/selectors/getProfileReadOnly';
+export {getProfileForm} from './model/selectors/getProfileForm';
+export {updateProfileData} from './model/services/updateProfileData/updateProfileData';

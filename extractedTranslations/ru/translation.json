@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Cancel": "Cancel",
   "Edit": "Edit",
   "Error": "Error",
   "Failed login or password": "Failed login or password",
@@ -14,7 +15,11 @@
   "Page not found": "Page not found",
   "Profile": "Profile",
   "Profile Page": "Profile Page",
+  "Save": "Save",
+  "Try reloading the page": "Try reloading the page",
   "You enter invalid login or password": "You enter invalid login or password",
+  "Your age": "Your age",
+  "Your city": "Your city",
   "Your firstname": "Your firstname",
   "Your lastname": "Your lastname",
   "Your name": "Your name",

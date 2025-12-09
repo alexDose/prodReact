@@ -30,12 +30,12 @@
     }
   ],
   "profile": {
-    "first": "Алексей",
-    "lastname": "Дос",
-    "age": 28,
+    "first": "Алексей1",
+    "lastname": "Дос2",
+    "age": 35,
     "currency": "RUB",
     "country": "Russia",
-    "city": "Moscow",
+    "city": "Minsk",
     "username": "admin",
     "avatar": "https://i.pravatar.cc/150?img=1"
   }
