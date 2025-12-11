@@ -23,8 +23,6 @@ export const ProfilePageHeader = () => {
 
   const onSave = useCallback(() => {
     dispatch(updateProfileData());
-    dispatch(profileAction.setReadOnly(true));
-
   }, [dispatch]);
 
   return (

@@ -13,7 +13,7 @@ import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/dynamicModuleLoader/dynamicModuleLoader';
 import {useNavigate} from 'react-router-dom';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
-import {useSelector} from 'react-redux';  // ✅ Добавь
+import {useSelector} from 'react-redux';
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer
