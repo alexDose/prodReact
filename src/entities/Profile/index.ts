@@ -1,5 +1,5 @@
 export {ProfileType, ProfileSchema} from './model/types/profile';
-export {fetchProfileData} from './model/services/fetchProfileData';
+export {fetchProfileData} from './model/services/fetchProfileData/fetchProfileData';
 export {ProfileCard} from './ui/ProfileCard/ProfileCard';
 export {getFirstName} from './model/selectors/getFirstName';
 export {getLastName} from './model/selectors/getLastName';
@@ -9,3 +9,5 @@ export {getProfileError} from './model/selectors/getProfileError';
 export {getProfileReadOnly} from './model/selectors/getProfileReadOnly';
 export {getProfileForm} from './model/selectors/getProfileForm';
 export {updateProfileData} from './model/services/updateProfileData/updateProfileData';
+export {ValidateProfileData} from './model/services/validateProfileData/validateProfileData';
+export {getProfileValidateErrors} from './model/selectors/getProfileValidateErrors';
