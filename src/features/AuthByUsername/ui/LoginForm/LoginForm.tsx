@@ -14,6 +14,7 @@ import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/dynamicMo
 import {useNavigate} from 'react-router-dom';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 import {useSelector} from 'react-redux';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer
@@ -26,7 +27,7 @@ const LoginForm = () => {
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();  // ✅ Добавь
+  const navigate = useNavigate();
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
@@ -42,7 +43,7 @@ const LoginForm = () => {
 
     // ✅ Навигация после успешного логина
     if (loginByUsername.fulfilled.match(result)) {
-      navigate('/about');
+      navigate(RoutePath.main);
     }
   }, [dispatch, navigate, username, password]);
 

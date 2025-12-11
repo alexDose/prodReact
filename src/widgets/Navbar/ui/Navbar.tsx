@@ -7,6 +7,8 @@ import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAuthUserData, userActions} from 'entities/User';
+import {useNavigate} from 'react-router-dom';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
     className?: string
@@ -17,16 +19,20 @@ const NavbarComponent = ({className}: NavbarProps) => {
   const isAuth = useSelector(getAuthUserData);
   const dispatch = useDispatch();
   const [isAuthModal, setIsAuthModal] = useState(false);
+  const navigate = useNavigate();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
   }, []);
+
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
+
   const logout = useCallback(() => {
     dispatch(userActions.logout());
-  }, [dispatch]);
+    navigate(RoutePath.main);
+  }, [dispatch, navigate]);
 
   return (
     <div className={classNames(styles.Navbar, {}, [className])}>
