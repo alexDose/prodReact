@@ -1,4 +1,4 @@
-import {configureStore, ReducersMapObject, Reducer} from '@reduxjs/toolkit';
+import {configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
 import {counterReducer} from 'entities/Counter/modal/slices/CounterSlice';
 import {StateSchema} from 'app/providers/StoreProvider';
 import {userReducer} from 'entities/User';

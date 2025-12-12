@@ -1,3 +1,4 @@
+// webpack.config.ts
 import path from 'path';
 import webpack from 'webpack';
 import {buildWebpackConfig} from './config/build/buildWebpackConfig';
@@ -13,10 +14,10 @@ export default (env: BuildEnv) => {
 
   const mode = env.mode || 'development';
   const PORT = env.port || 3000;
-  const apiUrl = env.apiUrl || 'http://localhost:8000';
+  // ✅ В dev используем /api префикс для proxy
+  const apiUrl = env.apiUrl || (mode === 'development' ? '/api' : 'http://localhost:8000');
 
   const isDev = mode === 'development';
-
 
   const config: webpack.Configuration = buildWebpackConfig({
     mode,

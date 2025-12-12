@@ -1,6 +1,9 @@
 {
   "About": "About",
+  "Article": "Article",
   "Article Details": "Article Details",
+  "Article Details new": "Article Details new",
+  "Article not found": "Article not found",
   "Articles": "Articles",
   "Cancel": "Cancel",
   "Edit": "Edit",
@@ -11,6 +14,13 @@
   "Incorrect country": "Incorrect country",
   "Incorrect user data": "Incorrect user data",
   "Language": "Language",
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Login": "Login",
   "Logout": "Logout",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -34,6 +44,7 @@
   "Your username": "Your username",
   "decrement": "decrement",
   "edit": "edit",
+  "error": "error",
   "increment": "increment",
   "modal_content": "modal_content",
   "password": "password",
