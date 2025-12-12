@@ -4,10 +4,16 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {memo} from 'react';
 import {ArticleDetails} from 'entities/Article';
 import {useParams} from 'react-router-dom';
+import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/dynamicModuleLoader/dynamicModuleLoader';
+import {articleDetailsReducer} from 'entities/Article/model/slice/articleDetailsSlice';
 
 interface ArticleDetailsPageProps {
     className?: string
 }
+
+const reducers: ReducersList = {
+  articleDetails: articleDetailsReducer
+};
 
 const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
   const {t} = useTranslation('article');
@@ -20,9 +26,9 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
   }
 
   return (
-    <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <ArticleDetails id={id}/>
-    </div>
+    </DynamicModuleLoader>
   );
 };
 

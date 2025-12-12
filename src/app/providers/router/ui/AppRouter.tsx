@@ -7,7 +7,6 @@ import {RequireAuth} from 'app/providers/router/ui/RequireAuth';
 export const AppRouter = () => {
 
   const renderWithWrapper = (route: AppRoutesProps) => {
-
     const element = <Suspense fallback={<PageLoader/>}>
       <div className={'page-wrapper'}>
         {route.element}

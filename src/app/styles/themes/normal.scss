@@ -1,8 +1,12 @@
-:root {
+.app_light_theme {
   --bg-color: #f3e2e2;
-  --inverted-bg-color: #2a4097;
-  --primary-color: #000;
+  --inverted-bg-color: #10257a;
+  --primary-color: #0d1430;
   --secondary-color: #4a75e5;
   --inverted-primary-color: #0cbd06;
   --inverted-secondary-color: #15ff0d;
+
+  //skeleton
+  --skeleton-color: #fff;
+  --skeleton-shadow: #252424;
 }

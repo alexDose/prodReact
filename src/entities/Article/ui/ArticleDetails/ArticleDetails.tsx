@@ -20,15 +20,16 @@ interface ArticleDetailsProps {
 // eslint-disable-next-line react/display-name
 export const ArticleDetails =  memo(({className, id}: ArticleDetailsProps) => {
   const {t} = useTranslation('article');
-  const article = useSelector(getArticleDetailsData);
-  const isLoading = useSelector(getArticleDetailsIsLoading);
-  const error = useSelector(getArticleDetailsError);
   const dispatch = useAppDispatch();
-
+  
   useEffect(() => {
     dispatch(fetchArticleById(id));
   }, [dispatch, id]);
 
+  const article = useSelector(getArticleDetailsData);
+  const isLoading = useSelector(getArticleDetailsIsLoading);
+  const error = useSelector(getArticleDetailsError);
+  console.log(isLoading);
   let content;
 
   if (isLoading) {

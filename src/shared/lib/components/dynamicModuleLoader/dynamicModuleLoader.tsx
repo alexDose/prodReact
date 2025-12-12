@@ -1,5 +1,5 @@
-import {ReactNode, useEffect} from 'react';
-import {useStore} from 'react-redux';
+import {ReactNode, useLayoutEffect} from 'react';
+import {useStore, useDispatch} from 'react-redux';
 import {ReduxStoreWithManager} from 'app/providers/StoreProvider';
 import {StateSchemaKey} from 'app/providers/StoreProvider/config/StateSchema';
 import {Reducer} from '@reduxjs/toolkit';
@@ -14,27 +14,32 @@ interface Props {
     removeAfterUnmount?: boolean
 }
 
-export const DynamicModuleLoader = ({reducers, children, removeAfterUnmount}: Props) => {
+export const DynamicModuleLoader = ({reducers, children, removeAfterUnmount = true}: Props) => {
   const store = useStore() as ReduxStoreWithManager;
+  const dispatch = useDispatch();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const entries = Object.entries(reducers) as [StateSchemaKey, Reducer][];
 
     entries.forEach(([name, reducer]) => {
-      store.reducerManager.add(name, reducer);
+      // не добавляем, если уже смонтирован
+      const mountedReducers = store.reducerManager.getReducerMap();
+      if (!mountedReducers[name]) {
+        store.reducerManager.add(name, reducer);
+        dispatch({ type: `@INIT ${name} reducer` });
+      }
     });
 
     return () => {
       if (removeAfterUnmount) {
         entries.forEach(([name]) => {
           store.reducerManager.remove(name);
+          dispatch({ type: `@DESTROY ${name} reducer` });
         });
       }
     };
-    //eslint-disable-next-line
+    // eslint-disable-next-line
     }, []);
 
-  return <>
-    {children}
-  </>;
+  return <>{children}</>;
 };
