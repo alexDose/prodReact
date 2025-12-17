@@ -1,11 +1,11 @@
 .title {
-  font: var(--primary-font);
-  color: var(--primary-color);
+  font-size: var(--font-size-xl);
+  color: var(--secondary-color);
 }
 
 .text {
-  font: var(--secondary-font);
-  color: var(--secondary-color);
+  font-size: var(--font-size-l);
+  color: var(--primary-color);
 }
 
 .error {

@@ -8,7 +8,7 @@ interface Props {
     size?: number | undefined;
     alt?: string;
 }
-export const Avatar = ({className, src, size = 100, alt = 'image'}: Props) => {
+export const Avatar = ({className, src, size = 100, alt = 'avatar'}: Props) => {
   const mods: Mods = {};
 
   const style = useMemo<CSSProperties>(() => ({
