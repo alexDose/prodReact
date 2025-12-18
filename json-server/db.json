@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -93,7 +95,7 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
@@ -107,19 +109,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://bitdefender.pl/wp-content/uploads/2023/06/haker.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://img.freepik.com/darmowe-wektory/ladny-haker-operacyjny-laptopa-kreskowka-wektor-ikona-ilustracja-ikona-technologii-ludzie-na-bialym-tle-plaski_138676-7079.jpg?semt=ais_user_personalization&w=740&q=80"
     }
   ],
   "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
+    "first": "alya",
+    "lastname": "fest",
+    "age": 39,
     "currency": "RUB",
     "country": "Belarus",
     "city": "Moscow",

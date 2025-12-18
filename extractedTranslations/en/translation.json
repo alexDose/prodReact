@@ -6,6 +6,9 @@
   "Article not found": "Article not found",
   "Articles": "Articles",
   "Cancel": "Cancel",
+  "Comment": "Comment",
+  "Comment List": "Comment List",
+  "Comments": "Comments",
   "Copy": "Copy",
   "Edit": "Edit",
   "Error": "Error",
@@ -28,6 +31,7 @@
     "": ""
   },
   "Main": "Main",
+  "No comments": "No comments",
   "No data": "No data",
   "Page not found": "Page not found",
   "Profile": "Profile",
