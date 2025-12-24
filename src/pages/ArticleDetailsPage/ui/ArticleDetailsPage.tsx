@@ -1,7 +1,7 @@
 import cls from './ArticleDetailsPage.module.scss';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/dynamicModuleLoader/dynamicModuleLoader';
@@ -13,6 +13,8 @@ import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/s
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { AddCommentForm } from 'features/AddCommentForm';
+import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -31,6 +33,10 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
   const commentsError = useSelector(getArticleCommentsError);
   const dispatch = useAppDispatch();
 
+  const onSentComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text));
+  }, [dispatch]);
+
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
   }, [id, dispatch]);
@@ -45,6 +51,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <ArticleDetails id={id}/>
       <Text className={cls.commentTitle} title={t('Comments')}/>
+      <AddCommentForm onSentComment={onSentComment} />
       <CommentList isLoading={commentsIsLoading} comments={comments}/>
     </DynamicModuleLoader>
   );

@@ -102,6 +102,114 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "asdas2122",
+      "id": "rCaQ_yO"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "!0002",
+      "id": "i-qOB4b"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "100 comment for ",
+      "id": "uzlkdAn"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1002",
+      "id": "pz2s0MA"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "-cQKpoE"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "34",
+      "id": "0QHZx5R"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "12 eeress",
+      "id": "Nz3y-9p"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "qweasdas",
+      "id": "JEM0e3F"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test",
+      "id": "AC7dDhp"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdsadsa",
+      "id": "n9fdYLE"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ew",
+      "id": "-P5wbB4"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sdafd",
+      "id": "hC5n6Ua"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "23",
+      "id": "Gkb5bqX"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sadds",
+      "id": "dKtUwnd"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdfasfasdsadasdsa",
+      "id": "EDDjNp_"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asds",
+      "id": "aD1l90P"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "adsadadsad",
+      "id": "uRX2GDZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asd",
+      "id": "M5q43T8"
     }
   ],
   "users": [
@@ -120,14 +228,28 @@
       "avatar": "https://img.freepik.com/darmowe-wektory/ladny-haker-operacyjny-laptopa-kreskowka-wektor-ikona-ilustracja-ikona-technologii-ludzie-na-bialym-tle-plaski_138676-7079.jpg?semt=ais_user_personalization&w=740&q=80"
     }
   ],
-  "profile": {
-    "first": "alya",
-    "lastname": "fest",
-    "age": 39,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "alya",
+      "lastname": "fest",
+      "age": 39,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "2",
+      "first": "kola",
+      "lastname": "DroV",
+      "age": 19,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "ulia",
+      "avatar": "https://img.freepik.com/darmowe-wektory/ladny-haker-operacyjny-laptopa-kreskowka-wektor-ikona-ilustracja-ikona-technologii-ludzie-na-bialym-tle-plaski_138676-7079.jpg?semt=ais_user_personalization&w=740&q=80"
+    }
+  ]
 }

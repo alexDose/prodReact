@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Add": "Add",
   "Article": "Article",
   "Article Details": "Article Details",
   "Article Details new": "Article Details new",
@@ -11,6 +12,7 @@
   "Comments": "Comments",
   "Copy": "Copy",
   "Edit": "Edit",
+  "Enter comment text": "Enter comment text",
   "Error": "Error",
   "Failed login or password": "Failed login or password",
   "Form for authorization": "Form for authorization",
