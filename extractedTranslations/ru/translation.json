@@ -6,6 +6,7 @@
   "Article Details new": "Article Details new",
   "Article not found": "Article not found",
   "Articles": "Articles",
+  "Back to list": "Back to list",
   "Cancel": "Cancel",
   "Comment": "Comment",
   "Comment List": "Comment List",
@@ -55,6 +56,13 @@
   "increment": "increment",
   "modal_content": "modal_content",
   "password": "password",
+  "read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "reload": "reload",
   "throw Error": "throw Error",
   "username": "username"
