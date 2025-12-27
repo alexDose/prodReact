@@ -1,0 +1,12 @@
+.ViewSelector {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  height: 22px;
+  margin-bottom: 10px;
+}
+
+.notSelected {
+  fill: var(--primary-color);
+  opacity: 0.5;
+}

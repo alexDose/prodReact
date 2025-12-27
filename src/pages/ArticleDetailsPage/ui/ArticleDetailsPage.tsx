@@ -50,7 +50,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 
   if (!id) {
     return <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-      {t('Article not found')}
+      {t('ArticlesPageSchema not found')}
     </div>;
   }
 

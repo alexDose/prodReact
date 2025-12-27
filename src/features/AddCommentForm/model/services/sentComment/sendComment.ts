@@ -3,7 +3,7 @@
 // import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 // import { Comment } from 'entities/Comment';
 // import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';
-// import { getArticleDetailsData } from 'entities/Article/model/selectors/getArticleDetails';
+// import { getArticleDetailsData } from 'entities/ArticlesPageSchema/model/selectors/getArticleDetails';
 // import { addCommentFormActions } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
 //
 // export const sendComment = createAsyncThunk<Comment, void, ThunkConfig<string>>(
