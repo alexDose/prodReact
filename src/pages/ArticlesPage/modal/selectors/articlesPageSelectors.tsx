@@ -7,3 +7,4 @@ export const articlesPageView = (state: StateSchema) => state.articlesPage?.view
 export const articlesPageNum = (state: StateSchema) => state.articlesPage?.page || 1;
 export const articlesPageLimit = (state: StateSchema) => state.articlesPage?.limit;
 export const articlesPageHasMore = (state: StateSchema) => state.articlesPage?.hasMore;
+export const articlesPageInited = (state: StateSchema) => state.articlesPage?._init;
