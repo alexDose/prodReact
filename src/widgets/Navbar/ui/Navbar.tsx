@@ -35,7 +35,7 @@ const NavbarComponent = ({className}: NavbarProps) => {
   }, [dispatch, navigate]);
 
   return (
-    <div className={classNames(styles.Navbar, {}, [className])}>
+    <header className={classNames(styles.Navbar, {}, [className])}>
       <div className={styles.mainLinks}>
         <BugButton/>
         {isAuth ? <Button
@@ -52,7 +52,7 @@ const NavbarComponent = ({className}: NavbarProps) => {
           </Button>}
         {!isAuth && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -17,6 +17,7 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -49,20 +50,22 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
   }, [id, dispatch]);
 
   if (!id) {
-    return <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+    return <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
       {t('ArticlesPageSchema not found')}
-    </div>;
+    </Page>;
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-        {t('Back to list')}
-      </Button>
-      <ArticleDetails id={id}/>
-      <Text className={cls.commentTitle} title={t('Comments')}/>
-      <AddCommentForm onSentComment={onSentComment} />
-      <CommentList isLoading={commentsIsLoading} comments={comments}/>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+          {t('Back to list')}
+        </Button>
+        <ArticleDetails id={id}/>
+        <Text className={cls.commentTitle} title={t('Comments')}/>
+        <AddCommentForm onSentComment={onSentComment} />
+        <CommentList isLoading={commentsIsLoading} comments={comments}/>
+      </Page>
     </DynamicModuleLoader>
   );
 };

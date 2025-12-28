@@ -26,28 +26,21 @@ export const ArticlesList = memo(({
     );
   };
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
-        {new Array(view === ArticleView.SMALL ? 9 : 3)
-          .fill(0)
-          .map((_, index) => (
-            <ArticlesListItemSkeleton
-              key={index}
-              className={cls.card}
-              view={view}
-            />
-          ))}
-      </div>
-    );
-  }
-
   return (
     <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
       {articles.length > 0
         ? articles.map(renderArticle)
         : null
       }
+      {isLoading && new Array(view === ArticleView.SMALL ? 9 : 3)
+        .fill(0)
+        .map((_, index) => (
+          <ArticlesListItemSkeleton
+            key={index}
+            className={cls.card}
+            view={view}
+          />
+        ))}
     </div>
   );
 });
